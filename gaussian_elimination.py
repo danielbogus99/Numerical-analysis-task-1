@@ -87,7 +87,10 @@ def backward_substitution(mat):
 
 
 if __name__ == '__main__':
-    #np.set_printoptions(suppress=True, precision=)
+    # Date:18.2.24
+    # Group members: Daniel Boguslavsky 207915729,Shifra Avigdor 207067125,David Moalem 203387337,Eitan
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
+    # Name:Daniel boguslavsky 207915729
     A_b = ([[1, 2, 3, 4, 5],
             [2, 3, 4, 5, 1],
             [8, 8, 8, 8, 1],
