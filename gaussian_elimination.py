@@ -14,7 +14,7 @@ def gaussianElimination(mat):
             return "Singular Matrix (Inconsistent System)"
         else:
             return "Singular Matrix (May have infinitely many solutions)"
-    print(np.array(mat))
+    #print(np.array(mat))
     # if matrix is non-singular: get solution to system using backward substitution
     return backward_substitution(mat)
 
@@ -36,7 +36,12 @@ def forward_substitution(mat):
         if pivot_row != k:
             swap_row(mat, k, pivot_row)
 
-
+        for i in range(N):
+            if mat[i][i] == 0:
+                pass
+            elif not round(mat[i][i], 4):
+                    mat[i][i] = 0
+                    return N - 1
 
         # Normalize the current row by dividing all elements by the pivot element (diagonal element)
         pivot_element = mat[k][k]
@@ -51,9 +56,12 @@ def forward_substitution(mat):
             for j in range(k, N + 1):  # Iterate from k to N instead of k+1 to N for normalization
                 mat[i][j] -= mat[k][j] * m
 
+
             # filling lower triangular matrix with zeros
             mat[i][k] = 0
+        # for i in range(N):
 
+    print(np.array(mat))
     return -1
 
 
@@ -72,16 +80,20 @@ def backward_substitution(mat):
             x[i] -= mat[i][j] * x[j]
 
         x[i] = (x[i] / mat[i][i])
-        print(x[i])
+        #print(x[i])
 
 
     return x
 
 
 if __name__ == '__main__':
+    #np.set_printoptions(suppress=True, precision=)
+    A_b = ([[1, 2, 3, 4, 5],
+            [2, 3, 4, 5, 1],
+            [8, 8, 8, 8, 1],
+            [24, 15, 22, 1, 8]])
 
-    A_b = ([[2, 1, 5],
-           [5, 1, -2]])
+    print(np.array(A_b))
     np.array(A_b)
 
 

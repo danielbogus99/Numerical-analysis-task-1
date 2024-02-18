@@ -1,5 +1,5 @@
 import numpy as np
-from Matrix.inverse_matrix import inverse
+from inverse_matrix import inverse
 from colors import bcolors
 from matrix_utility import print_matrix
 
@@ -43,9 +43,9 @@ def condition_number(A):
 
 
 if __name__ == '__main__':
-    A = np.array([[1, 0, 0],
-                  [3, 5, 0],
-                  [2, 1, 8]])
+    A = np.array([[-5, -6, -5],
+                  [-2, -5, 0],
+                  [-3, -11, -8]])
     cond = condition_number(A)
 
     print(bcolors.OKGREEN, "\n condition number: ", cond, bcolors.ENDC)
