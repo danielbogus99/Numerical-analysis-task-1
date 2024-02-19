@@ -29,15 +29,15 @@ def condition_number(A):
     # Step 4: Compute the condition number
     cond = norm_A * norm_A_inv
 
-    print(bcolors.OKBLUE, "A:", bcolors.ENDC)
-    print_matrix(A)
+    #print(bcolors.OKBLUE, "A:", bcolors.ENDC)
+   # print_matrix(A)
 
-    print(bcolors.OKBLUE, "inverse of A:", bcolors.ENDC)
-    print_matrix(A_inv)
+   # print(bcolors.OKBLUE, "inverse of A:", bcolors.ENDC)
+  #  print_matrix(A_inv)
 
     print(bcolors.OKBLUE, "Max Norm of A:", bcolors.ENDC, norm_A, "\n")
 
-    print(bcolors.OKBLUE, "max norm of the inverse of A:", bcolors.ENDC, norm_A_inv)
+    #print(bcolors.OKBLUE, "max norm of the inverse of A:", bcolors.ENDC, norm_A_inv)
 
     return cond
 
@@ -50,12 +50,12 @@ if __name__ == '__main__':
     # David Moalem 203387337
     # Git:https://github.com/danielbogus99/Numerical-analysis-task-1/tree/main
     # Name: Daniel Boguslavsky
-    A = np.array([[-5, -6, -5],
-                  [-2, -5, 0],
-                  [-3, -11, -8]])
+    A = np.array([[2, 1, 0],
+                  [3, -1, 0],
+                  [1, 4, -2]])
     cond = condition_number(A)
 
-    print(bcolors.OKGREEN, "\n condition number: ", cond, bcolors.ENDC)
+   # print(bcolors.OKGREEN, "\n condition number: ", cond, bcolors.ENDC)
 
 
 

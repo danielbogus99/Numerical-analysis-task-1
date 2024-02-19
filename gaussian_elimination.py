@@ -80,7 +80,6 @@ def backward_substitution(mat):
             x[i] -= mat[i][j] * x[j]
 
         x[i] = (x[i] / mat[i][i])
-        #print(x[i])
 
 
     return x
@@ -96,10 +95,10 @@ if __name__ == '__main__':
     # Name: Daniel Boguslavsky
 
 
-    A_b = ([[1, 2, 3, 4, 5],
-            [2, 3, 4, 5, 1],
-            [8, 8, 8, 8, 1],
-            [24, 15, 22, 1, 8]])
+    A_b = ([[2, 1, 0,5],
+            [3, -1, 0,6],
+            [1, 4, 2,7],
+            ])
 
     print(np.array(A_b))
     np.array(A_b)
