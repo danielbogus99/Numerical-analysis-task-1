@@ -77,7 +77,13 @@ def lu_solve(A_b):
 
 
 if __name__ == '__main__':
-
+    # Date: 19.03.2024
+    # Group: Eytan Stryzhack 336244959,
+    # Daniel Boguslavsky 207915729
+    # , Shifra Avigdor 207067125,
+    # David Moalem 203387337
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1/tree/main
+    # Name: Daniel Boguslavsky
 
     A_b = [[1, -1, 2, -1, -8],
         [2, -2, 3, -3, -20],

@@ -33,11 +33,17 @@ def gauss_seidel(A, b, X0, TOL=1e-16, N=200):
         X0 = x.copy()
 
     print("Maximum number of iterations exceeded")
-    return tuple(x)
+    return "not found"
 
 
 if __name__ == '__main__':
-
+    # Date: 19.03.2024
+    # Group: Eytan Stryzhack 336244959,
+    # Daniel Boguslavsky 207915729
+    # , Shifra Avigdor 207067125,
+    # David Moalem 203387337
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1/tree/main
+    # Name: Daniel Boguslavsky
     A = np.array([[3, -1, 1], [0, 1, -1], [1, 1, -2]])
     b = np.array([4, -1, -3])
     X0 = np.zeros_like(b)

@@ -41,7 +41,7 @@ def inverse(matrix):
                 counter += 1
                 print(f"{elementary_matrix} \n")
             matrix = np.dot(elementary_matrix, matrix)
-            #print(f"The matrix after elementary operation :\n {matrix}")
+            print(f"The matrix after elementary operation :\n {matrix}")
 
             identity = np.dot(elementary_matrix, identity)
 
@@ -54,10 +54,10 @@ def inverse(matrix):
                     counter += 1
                     print(f"{elementary_matrix} \n")
                 matrix = np.dot(elementary_matrix, matrix)
-               # print(f"The matrix after elementary operation :\n {matrix}")
-               #  print(bcolors.OKGREEN,
-               #        "------------------------------------------------------------------------------------------------------------------",
-               #        bcolors.ENDC)
+                print(f"The matrix after elementary operation :\n {matrix}")
+                print(bcolors.OKGREEN,
+                       "------------------------------------------------------------------------------------------------------------------",
+                       bcolors.ENDC)
                 identity = np.dot(elementary_matrix, identity)
 
     for i in range(n-1, -1,-1):
@@ -65,19 +65,17 @@ def inverse(matrix):
             if i != j and matrix[j, i] != 0:
                 scalar = -matrix[j, i]
                 elementary_matrix = row_addition_elementary_matrix(n, j, i, scalar)
-                #print(f"elementary matrix for R{j + 1} = R{j + 1} + ({scalar}R{i + 1}):\n {elementary_matrix} \n")
+                print(f"elementary matrix for R{j + 1} = R{j + 1} + ({scalar}R{i + 1}):\n {elementary_matrix} \n")
                 matrix = np.dot(elementary_matrix, matrix)
-                #print(f"The matrix after elementary operation :\n {matrix}")
-                #print(bcolors.OKGREEN,
-                      #"------------------------------------------------------------------------------------------------------------------",
-                      #bcolors.ENDC)
+                print(f"The matrix after elementary operation :\n {matrix}")
+                print(bcolors.OKGREEN,"-------")
                 identity = np.dot(elementary_matrix, identity)
 
     return identity
 
 
 if __name__ == '__main__':
-    # Date: 19.02.2024
+    # Date: 19.03.2024
     # Group: Eytan Stryzhack 336244959,
     # Daniel Boguslavsky 207915729
     # , Shifra Avigdor 207067125,
