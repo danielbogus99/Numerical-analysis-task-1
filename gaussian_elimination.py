@@ -80,20 +80,24 @@ def backward_substitution(mat):
             x[i] -= mat[i][j] * x[j]
 
         x[i] = (x[i] / mat[i][i])
-        #print(x[i])
 
 
     return x
 
 
 if __name__ == '__main__':
-    # Date:18.2.24
-    # Group members: Daniel Boguslavsky 207915729,Shifra Avigdor 207067125,David Moalem 203387337,Eitan
-    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
-    # Name:Daniel boguslavsky 207915729
-    A_b = ([[1, 2, 3, 4 ],
-            [5, 6, 7, 8 ],
-            [9, 10,11,15],
+    # Date: 19.02.2024
+    # Group: Eytan Stryzhack 336244959,
+    # Daniel Boguslavsky 207915729
+    # , Shifra Avigdor 207067125,
+    # David Moalem 203387337
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1/tree/main
+    # Name: Daniel Boguslavsky
+
+
+    A_b = ([[2, 1, 0,5],
+            [3, -1, 0,6],
+            [1, 4, 2,7],
             ])
 
     print(np.array(A_b))

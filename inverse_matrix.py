@@ -5,6 +5,7 @@ import numpy as np
 
 
 def inverse(matrix):
+    counter = 0
     print(bcolors.OKBLUE,
           f"=================== Finding the inverse of a non-singular matrix using elementary row operations ===================\n {matrix}\n",
           bcolors.ENDC)
@@ -25,7 +26,7 @@ def inverse(matrix):
                     print(f"elementary matrix to swap R{i + 1} and R{k + 1}:\n {swap_elementary_matrix} \n")
                     matrix = np.dot(swap_elementary_matrix, matrix)
                     identity = np.dot(swap_elementary_matrix, identity)
-                    print(f"The matrix after elementary operation :\n {matrix}")
+                    #print(f"The matrix after elementary operation :\n {matrix}")
                     print(bcolors.OKGREEN,
                           "------------------------------------------------------------------------------------------------------------------",
                           bcolors.ENDC)
@@ -36,12 +37,12 @@ def inverse(matrix):
         if matrix[i, i] != 1:
             scalar = 1.0 / matrix[i, i]
             elementary_matrix = scalar_multiplication_elementary_matrix(n, i, scalar)
-            print(f"elementary matrix to make the diagonal element 1 :\n {elementary_matrix} \n")
+            if counter < 3:
+                counter += 1
+                print(f"{elementary_matrix} \n")
             matrix = np.dot(elementary_matrix, matrix)
-            print(f"The matrix after elementary operation :\n {matrix}")
-            print(bcolors.OKGREEN,
-                  "------------------------------------------------------------------------------------------------------------------",
-                  bcolors.ENDC)
+            #print(f"The matrix after elementary operation :\n {matrix}")
+
             identity = np.dot(elementary_matrix, identity)
 
         # Zero out the elements above and below the diagonal
@@ -49,12 +50,14 @@ def inverse(matrix):
             if i != j and matrix[j, i] != 0:
                 scalar = -matrix[j, i]
                 elementary_matrix = row_addition_elementary_matrix(n, j, i, scalar)
-                print(f"elementary matrix for R{j + 1} = R{j + 1} + ({scalar}R{i + 1}):\n {elementary_matrix} \n")
+                if counter < 3:
+                    counter += 1
+                    print(f"{elementary_matrix} \n")
                 matrix = np.dot(elementary_matrix, matrix)
-                print(f"The matrix after elementary operation :\n {matrix}")
-                print(bcolors.OKGREEN,
-                      "------------------------------------------------------------------------------------------------------------------",
-                      bcolors.ENDC)
+               # print(f"The matrix after elementary operation :\n {matrix}")
+               #  print(bcolors.OKGREEN,
+               #        "------------------------------------------------------------------------------------------------------------------",
+               #        bcolors.ENDC)
                 identity = np.dot(elementary_matrix, identity)
 
     for i in range(n-1, -1,-1):
@@ -62,26 +65,30 @@ def inverse(matrix):
             if i != j and matrix[j, i] != 0:
                 scalar = -matrix[j, i]
                 elementary_matrix = row_addition_elementary_matrix(n, j, i, scalar)
-                print(f"elementary matrix for R{j + 1} = R{j + 1} + ({scalar}R{i + 1}):\n {elementary_matrix} \n")
+                #print(f"elementary matrix for R{j + 1} = R{j + 1} + ({scalar}R{i + 1}):\n {elementary_matrix} \n")
                 matrix = np.dot(elementary_matrix, matrix)
-                print(f"The matrix after elementary operation :\n {matrix}")
-                print(bcolors.OKGREEN,
-                      "------------------------------------------------------------------------------------------------------------------",
-                      bcolors.ENDC)
+                #print(f"The matrix after elementary operation :\n {matrix}")
+                #print(bcolors.OKGREEN,
+                      #"------------------------------------------------------------------------------------------------------------------",
+                      #bcolors.ENDC)
                 identity = np.dot(elementary_matrix, identity)
 
     return identity
 
 
 if __name__ == '__main__':
-    # Date:18.2.24
-    # Group members: Daniel Boguslavsky 207915729,Shifra Avigdor 207067125,David Moalem 203387337,Eitan
-    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
-    # Name:Daniel boguslavsky 207915729
-    A = np.array(([[2, 4, 6,],
-            [1, 2, 3 ],
-            [3, 6,9],
-            ]))
+    # Date: 19.02.2024
+    # Group: Eytan Stryzhack 336244959,
+    # Daniel Boguslavsky 207915729
+    # , Shifra Avigdor 207067125,
+    # David Moalem 203387337
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1/tree/main
+    # Name: Daniel Boguslavsky
+    A = np.array(([[1, 2, 3, 4],
+           [2, 3, 4, 5],
+           [8, 8, 8, 8],
+           [24,15,22,1],
+           ]))
 
     try:
         A_inverse = inverse(A)
