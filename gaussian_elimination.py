@@ -91,10 +91,10 @@ if __name__ == '__main__':
     # Group members: Daniel Boguslavsky 207915729,Shifra Avigdor 207067125,David Moalem 203387337,Eitan
     # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
     # Name:Daniel boguslavsky 207915729
-    A_b = ([[1, 2, 3, 4, 5],
-            [2, 3, 4, 5, 1],
-            [8, 8, 8, 8, 1],
-            [24, 15, 22, 1, 8]])
+    A_b = ([[1, 2, 3, 4 ],
+            [5, 6, 7, 8 ],
+            [9, 10,11,15],
+            ])
 
     print(np.array(A_b))
     np.array(A_b)
