@@ -43,12 +43,13 @@ def condition_number(A):
 
 
 if __name__ == '__main__':
-    # Date: 19.02.2024
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
+    # Date: 18.03.2024
     # Group: Eytan Stryzhack 336244959,
     # Daniel Boguslavsky 207915729
     # , Shifra Avigdor 207067125,
     # David Moalem 203387337
-    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1/tree/main
+
     # Name: Daniel Boguslavsky
     A = np.array([[2, 1, 0],
                   [3, -1, 0],
