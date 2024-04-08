@@ -11,56 +11,27 @@ def lagrange_interpolation(x_data, y_data, x):
     x (float): The x-value where you want to evaluate the interpolated polynomial.
 
     Returns:
-    tuple: Coefficients of the interpolated polynomial.
     float: The interpolated y-value at the given x.
     """
-    # Input validation
-    if len(x_data) != len(y_data) or len(x_data) == 0:
-        raise ValueError("Invalid input data. x_data and y_data must have the same non-zero length.")
-
     n = len(x_data)
     result = 0.0
-    polynomial_coefficients = []
 
-    # Lagrange interpolation formula
     for i in range(n):
         term = y_data[i]
         for j in range(n):
             if i != j:
                 term *= (x - x_data[j]) / (x_data[i] - x_data[j])
         result += term
-        polynomial_coefficients.append(term)
 
-    return tuple(polynomial_coefficients), result
+    return result
 
+if _name_ == '_main_':
 
-if __name__ == '__main__':
-    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
-    # Date: 18.03.2024
-    # Group: Eytan Stryzhack 336244959,
-    # Daniel Boguslavsky 207915729
-    # , Shifra Avigdor 207067125,
-    # David Moalem 203387337
-
-    # Name: Daniel Boguslavsky
-    table_points = [()]
-
-    x_data = [1, 2, 5, 2]
-    y_data = [1, 0, 2, 1]
-    x_interpolate = 5  # The x-value where you want to interpolate
-    y_interpolate = lagrange_interpolation(x_data, y_data, x_interpolate)
-    print(bcolors.OKBLUE, "\nInterpolated value at x =", x_interpolate, "is y =", y_interpolate, bcolors.ENDC)
-    x_interpolate = 8  # The x-value where you want to interpolate
-    y_interpolate = lagrange_interpolation(x_data, y_data, x_interpolate)
-    print(bcolors.OKBLUE, "\nInterpolated value at x =", x_interpolate, "is y =", y_interpolate, bcolors.ENDC)
-
-
-
-
-
-    try:
-        polynomial_coefficients, y_interpolate = lagrange_interpolation(x_data, y_data, x_interpolate)
-        print(bcolors.OKBLUE, "\nInterpolated value at x =", x_interpolate, "is y =", y_interpolate, bcolors.ENDC)
-        print("Polynomial Coefficients:", polynomial_coefficients)
-    except ValueError as e:
-        print(bcolors.FAIL, "Error:", e, bcolors.ENDC)
+    x_data = []
+    y_data = []
+    x_a = 5  # The x-value where you want to interpolate
+    x_b = 3
+    y_a = lagrange_interpolation(x_data, y_data, x_a)
+    y_b = lagrange_interpolation(x_data, y_data, x_b)
+    print(bcolors.OKBLUE, "\nInterpolated value at xa =", x_a, "is ya =", y_a, bcolors.ENDC)
+    print(bcolors.OKBLUE, "\nInterpolated value at xb =", x_b, "is yb =", y_b,bcolors.ENDC)
