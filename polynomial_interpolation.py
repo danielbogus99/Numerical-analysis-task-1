@@ -28,8 +28,16 @@ def polynomialInterpolation(table_points, x):
 
 
 if __name__ == '__main__':
-    table_points = [(1.2, 1.31), (1.3, 2.69), (1.4, 1.30), (1.5, -1.25), (1.6, -2.11)]
-    x = 1.47
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
+    # Date: 18.03.2024
+    # Group: Eytan Stryzhack 336244959,
+    # Daniel Boguslavsky 207915729
+    # , Shifra Avigdor 207067125,
+    # David Moalem 203387337
+
+    # Name: Daniel Boguslavsky
+    table_points = [()]
+    x = 5
     print(bcolors.OKBLUE, "----------------- Interpolation & Extrapolation Methods -----------------\n", bcolors.ENDC)
     print(bcolors.OKBLUE, "Table Points: ", bcolors.ENDC, table_points)
     print(bcolors.OKBLUE, "Finding an approximation to the point: ", bcolors.ENDC, x, '\n')

@@ -37,14 +37,20 @@ def linearInterpolation(table_points, point):
 
 
 if __name__ == '__main__':
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
+    # Date: 18.03.2024
+    # Group: Eytan Stryzhack 336244959,
+    # Daniel Boguslavsky 207915729
+    # , Shifra Avigdor 207067125,
+    # David Moalem 203387337
 
-<<<<<<< HEAD
+    # Name: Daniel Boguslavsky
+
     table_points = [()]
     x = 5
-=======
-    table_points = [(0, 0), (1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, -0.2794)]
-    x = 9
->>>>>>> origin/main
+
+
+
     print(bcolors.OKBLUE, "----------------- Interpolation & Extrapolation Methods -----------------\n", bcolors.ENDC)
     print(bcolors.OKBLUE, "Table Points: ", bcolors.ENDC, table_points)
     print(bcolors.OKBLUE, "Finding an approximation to the point: ", bcolors.ENDC, x)

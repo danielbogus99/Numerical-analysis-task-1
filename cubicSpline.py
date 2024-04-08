@@ -90,6 +90,14 @@ def natural_cubic_spline(f, x0):
 
 
 if __name__ == '__main__':
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
+    # Date: 18.03.2024
+    # Group: Eytan Stryzhack 336244959,
+    # Daniel Boguslavsky 207915729
+    # , Shifra Avigdor 207067125,
+    # David Moalem 203387337
+
+    # Name: Daniel Boguslavsky
     f = [(0, 0), (math.pi/6, 0.5), (math.pi/4, 0.7072), (math.pi/2, 1)]
     x0 = math.pi/3
     print(math.pi)

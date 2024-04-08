@@ -40,7 +40,14 @@ def f(x):
 
 
 if __name__ == '__main__':
+    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
+    # Date: 18.03.2024
+    # Group: Eytan Stryzhack 336244959,
+    # Daniel Boguslavsky 207915729
+    # , Shifra Avigdor 207067125,
+    # David Moalem 203387337
 
+    # Name: Daniel Boguslavsky
     a = 1
     b = 2
     n = 10
