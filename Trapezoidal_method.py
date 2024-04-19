@@ -1,31 +1,44 @@
-import math
-from colors import bcolors
+import numpy as np
 
 
-def trapezoidal_rule(f, a, b, n):
+def trapezoidal_rule(func, a, b, n):
+    """
+    Approximates the integral of a function using the trapezoidal rule.
+
+    Parameters:
+        func (function): The function to integrate.
+        a (float): The lower limit of integration.
+        b (float): The upper limit of integration.
+        n (int): The number of subintervals to use for approximation.
+
+    Returns:
+        float: The approximate value of the integral.
+    """
+    # Calculate the width of each subinterval
     h = (b - a) / n
-    T = f(a) + f(b)
-    integral = 0.5 * T  # Initialize with endpoints
 
-    for i in range(1, n):
-        x_i = a + i * h
-        integral += f(x_i)
+    # Calculate the endpoints and the function values at these endpoints
+    x = np.linspace(a, b, n + 1)
+    y = func(x)
 
-    integral *= h
+    # Use the trapezoidal rule formula
+    integral = h * (np.sum(y) - 0.5 * (y[0] + y[-1]))
 
     return integral
-2
 
-if __name__ == '__main__':
-    # Git:https://github.com/danielbogus99/Numerical-analysis-task-1
-    # Date: 18.03.2024
-    # Group: Eytan Stryzhack 336244959,
-    # Daniel Boguslavsky 207915729
-    # , Shifra Avigdor 207067125,
-    # David Moalem 203387337
 
-    # Name: Daniel Boguslavsky
-    f = lambda x:()
-    result = trapezoidal_rule(f, 3, 4, 10)
-    print(bcolors.OKBLUE,"Approximate integral:", result, bcolors.ENDC)
+# Define the function to integrate (in this case, sin(x))
+def func(x):
+    return np.sin(x)
 
+
+# Define the limits of integration
+a = 0
+b = np.pi
+
+# Define the number of subintervals
+n = 4
+
+# Calculate the integral using the trapezoidal rule
+approx_integral = trapezoidal_rule(func, a, b, n)
+print("Approximate value of the integral using the trapezoidal rule:", approx_integral)

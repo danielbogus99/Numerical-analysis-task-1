@@ -49,11 +49,11 @@ if __name__ == '__main__':
     # David Moalem 203387337
 
     # Name: Daniel Boguslavsky
-    f = lambda x: ()
+    f = lambda x: np.sin(x)
 
-    n = 10
-    a=1
-    b=2
+    n = 4
+    a=0
+    b=np.pi
 
     print( f" Division into n={n} sections ")
     integral = simpsons_rule(f, a, b, n)
